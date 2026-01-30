@@ -30,6 +30,7 @@
                     <span class="text-xl font-bold text-gray-900">WordWise</span>
                 </div>
 
+                <!-- Desktop navigation -->
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="Home.html" class="text-gray-700 hover:text-gray-900 text-sm">Home</a>
                     <a href="Dictionary.html" class="text-gray-700 hover:text-gray-900 text-sm">Dictionary</a>
@@ -48,6 +49,8 @@
                     </button>
                 </div>
 
+
+                <!-- Mobile Menu Button -->
                 <button class="md:hidden p-2" id="menu-btn">
                     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -59,14 +62,36 @@
                 </button>
             </div>
 
-            <nav id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 border-t border-gray-100">
-                <a href="Home.html" class="block text-gray-700 hover:text-gray-900 py-2">Home</a>
-                <a href="Dictionary.html" class="block text-gray-700 hover:text-gray-900 py-2">Dictionary</a>
-                <a href="Thesaurus.html" class="block text-gray-700 hover:text-gray-900 py-2">Thesaurus</a>
-                <a href="Games.html" class="block text-gray-700 hover:text-gray-900 py-2">Games</a>
-                <a href="Learn.html" class="block text-gray-700 hover:text-gray-900 py-2">Learn</a>
-                <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium mt-4">Sign
-                    Up</button>
+            <!-- Mobile Menu (Hidden by default) -->
+            <nav id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                <div class="py-4 space-y-1 border-t border-gray-100">
+                    <a href="Home.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Home</a>
+                    <a href="Dictionary.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Dictionary</a>
+                    <a href="Thesaurus.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Thesaurus</a>
+                    <a href="Games.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Games</a>
+                    <a href="Learn.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Learn</a>
+                    <a href="About.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">About</a>
+                    <a href="Contact.html"
+                        class="block text-gray-700 hover:bg-gray-50 hover:text-blue-600 py-3 px-2 rounded-lg transition-colors font-medium">Contact</a>
+
+                    <!-- Mobile Auth Buttons -->
+                    <div class="pt-4 space-y-2">
+                        <button
+                            class="w-full text-gray-700 hover:bg-gray-50 py-3 px-2 rounded-lg font-medium transition-colors border border-gray-300">
+                            Login
+                        </button>
+                        <button
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-2 rounded-lg font-medium transition-colors">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -76,7 +101,7 @@
         style="background-image: linear-gradient(to bottom right, rgba(147, 196, 253, 0.37), rgb(0, 64, 201)), url('img/images.png');">
 
         <div class="container mx-auto relative z-10">
-            <h1 class="text-6xl font-bold text-gray-900 text-center mb-4">Discover the Power of Words</h1>
+            <h1 class="lg:text-6xl text-3xl font-bold text-gray-900 text-center mb-4">Discover the Power of Words</h1>
             <p class="text-center text-gray-600 mb-4 mx-auto font-medium">
                 Search meanings, play word games, and enhance your vocabulary.
             </p>
@@ -196,7 +221,7 @@
                 </div>
 
                 <!-- How It Works Section -->
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">How It Works</h2>
+                <h2 class=" lg:text-4xl text-2xl font-bold text-center text-gray-800 mb-12">How It Works</h2>
 
                 <!-- Feature Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -271,7 +296,7 @@
                 <!-- CTA Section -->
                 <div
                     class="max-w-6xl mx-auto bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-12 text-center shadow-2xl">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Expand Your Vocabulary?</h2>
+                    <h2 class="text-2xl lg:text-4xl font-bold text-white mb-4">Ready to Expand Your Vocabulary?</h2>
                     <p class="text-blue-100 text-lg mb-8">Join thousands of word enthusiasts improving their language
                         skills
                     </p>
@@ -342,7 +367,66 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                // Open menu
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+
+                // Animate to X icon
+                menuIcon.innerHTML = `
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                `;
+            } else {
+                // Close menu
+                mobileMenu.style.maxHeight = '0';
+
+                // Animate back to hamburger icon
+                menuIcon.innerHTML = `
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                `;
+            }
+        });
+
+        // Close menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.style.maxHeight = '0';
+                menuIcon.innerHTML = `
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                `;
+            });
+        });
+
+        // Close menu when window is resized to desktop size
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenu.style.maxHeight = '0';
+                menuIcon.innerHTML = `
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                `;
+            }
+        });
+    </script>
 </body>
 
 </html>
