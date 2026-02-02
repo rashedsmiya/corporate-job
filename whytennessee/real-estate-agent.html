@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Living in Bristol, Tennessee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#1F3A68',
+                        'brand-gray': '#54595f',
+                        'brand-light-gray': '#7a7a7a',
+                        'brand-accent': '#2c3e50',
+                        'brand-orange': '#C9A249'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        serif: ['Roboto Slab', 'serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .active-tab {
+            background-color: #C9A249 !important;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <div class="hidden lg:block bg-brand-dark  border-b border-gray-200">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center text-sm">
+
+            <a href="mailto:info@whytennessee.com" class="flex items-center gap-2">
+                <span>
+                    <svg aria-hidden="true" class="w-5 h-5 fill-white" viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                        </path>
+                    </svg> </span>
+                <span class="text-white text-xl">info@whytennessee.com</span>
+            </a>
+            <div class="flex space-x-3">
+                <a href="#"
+                    class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-brand-gray shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                    <svg aria-hidden="true"
+                        class="w-5 h-5 fill-brand-dark group-hover:fill-white transition-all duration-300"
+                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
+                        </path>
+                    </svg></a>
+                <a href="#"
+                    class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                    <svg aria-hidden="true"
+                        class="w-5 h-5 fill-brand-dark group-hover:fill-white transition-all duration-300"
+                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#"
+                    class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                    <svg aria-hidden="true"
+                        class="w-5 h-5 fill-brand-dark group-hover:fill-white transition-all duration-300"
+                        viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                        </path>
+                    </svg></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex-shrink-0">
+                <img src="https://whytennessee.com/wp-content/uploads/2025/12/DFD32E71-47C0-41C6-86DE-4B5126B4E53A-1-e1765605360205.png"
+                    alt="Why Tennessee Logo" class="h-20 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-brand-dark">
+                <a href="#" class="text-brand-orange font-semibold">Home</a>
+                <a href="#" class="hover:text-brand-orange transition">Homes for Sale</a>
+                <a href="#" class="hover:text-brand-orange transition">Rentals</a>
+
+                <div class="relative group">
+                    <button class="flex items-center hover:text-brand-orange transition focus:outline-none">
+                        Cities <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-lg rounded-md hidden group-hover:block transition-all duration-200">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Nashville</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Knoxville</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Chattanooga</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Memphis</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Franklin</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="flex items-center hover:text-brand-orange transition focus:outline-none">
+                        Moving to Tennessee <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-64 bg-white border border-gray-100 shadow-lg rounded-md hidden group-hover:block transition-all duration-200">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Relocation Guide</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Cost of Living</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Pros & Cons</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-sm">Moving Checklist</a>
+                    </div>
+                </div>
+
+                <a href="#" class="hover:text-brand-orange transition">Partner Program</a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="#"
+                    class="bg-brand-dark text-white px-5 py-4 rounded-full hover:bg-brand-orange transition flex items-center text-md font-medium">
+                    Login/Registration <span>
+                        <svg aria-hidden="true" class="w-5 h-5 fill-white ml-2" viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z">
+                            </path>
+                        </svg> </span>
+                </a>
+            </div>
+
+            <button id="nav-toggle" class="lg:hidden text-2xl text-brand-dark focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#" class="block text-brand-dark font-semibold">Home</a>
+                <a href="#" class="block text-brand-dark">Homes for Sale</a>
+                <a href="#" class="block text-brand-dark">Rentals</a>
+                <a href="#" class="block text-brand-dark">Cities</a>
+                <a href="#" class="block text-brand-dark">Moving Guide</a>
+                <a href="#"
+                    class="inline-block mt-2 bg-brand-dark text-white px-5 py-2 rounded text-sm w-full text-center">Login</a>
+            </div>
+        </div>
+    </header>
+ 
+    
+    <!-- Real Estate Agent Hero Section -->
+    <section class="relative h-[500px] bg-cover bg-center bg-no-repeat" style="background-image: url('img/Hay-bales-in-pasture-on-horse-farm-in-shadow-of-the-Blue-Ridge-Mountains-scaled.jpeg');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative container mx-auto px-6 h-full flex items-center">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl lg:text-6xl font-semibold text-white leading-tight">
+                    Real Estate Agent
+                </h1>
+            </div>
+        </div>
+    </section>
+
+     <section class="bg-gray-50 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Our Property Owner / Manager Agent
+            </h1>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1 - Shuvo -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/engineer_team_full_skill_quality_for_maintenance_and_training_in_industry_factory_worker___warehouse_Workshop_for_factory_operators__mechanical_.jpeg" 
+                            alt="Shuvo - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Shuvo</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Shuvo@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Shuvo is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Islam -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/Doctor_and_hospital_administrators_talking_in_meeting1-scaled.jpeg" 
+                            alt="Islam - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Islam</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Islam@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Islam Islam is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Joncina -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/gallery4.jpg" 
+                            alt="Joncina - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Joncina</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Joncina@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Joncina is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#EEEEEE] py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Our Property Owner / Manager Agent
+            </h1>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1 - Shuvo -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/Man-movers-worker-in-blue-uniform-unloading-cardboard-boxes-from-truck.Professional-delivery-and-moving-service-scaled.jpeg" 
+                            alt="Shuvo - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Shuvo</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Shuvo@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Shuvo is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Islam -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/gallery2.jpg" 
+                            alt="Islam - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Islam</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Islam@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Islam Islam is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Joncina -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img 
+                            src="img/Biology_class_at_high_school_lab1-scaled.jpeg" 
+                            alt="Joncina - Property Owner"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6 text-center">
+                        <h2 class="text-xl font-bold text-gray-900 mb-1">Name: Joncina</h2>
+                        <p class="text-sm text-gray-600 mb-4">Email: Joncina@gmail.com</p>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+                            Joncina is a property owner committed to maintaining well-managed, high-quality residential and commercial properties.
+                        </p>
+                        <button class="w-full py-3 px-4 border-2 border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+ 
+    <footer class="bg-white pt-16 pb-8 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="https://whytennessee.com/wp-content/uploads/2025/12/DFD32E71-47C0-41C6-86DE-4B5126B4E53A-e1765605051715.png"
+                        alt="Why Tennessee" class="h-16 mb-6">
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        WhyTennessee.com is a marketing and discovery platform and is not a real estate brokerage. We do
+                        not represent buyers or sellers directly. All real estate services are provided by independent,
+                        licensed professionals.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-dark">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-black transition flex items-center"><i
+                                    class="fas fa-arrow-circle-right mr-2 text-gray-400"></i> Moving to Tennessee</a>
+                        </li>
+                        <li><a href="#" class="hover:text-black transition flex items-center"><i
+                                    class="fas fa-arrow-circle-right mr-2 text-gray-400"></i> Relocation Guide</a></li>
+                        <li><a href="#" class="hover:text-black transition flex items-center"><i
+                                    class="fas fa-arrow-circle-right mr-2 text-gray-400"></i> Cost of Living</a></li>
+                        <li><a href="#" class="hover:text-black transition flex items-center"><i
+                                    class="fas fa-arrow-circle-right mr-2 text-gray-400"></i> Best Places to Live</a>
+                        </li>
+                        <li><a href="#" class="hover:text-black transition flex items-center"><i
+                                    class="fas fa-arrow-circle-right mr-2 text-gray-400"></i> Renting & Buying</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-dark">Information</h3>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-gray-400 w-5 text-center"></i>
+                            info@whytennessee.com</li>
+                        <li class="flex items-center"><i
+                                class="fas fa-stopwatch mr-3 text-gray-400 w-5 text-center"></i> Typically within 24
+                            hours</li>
+                        <li class="flex items-center"><i
+                                class="far fa-address-book mr-3 text-gray-400 w-5 text-center"></i> United States</li>
+                        <li class="flex items-center"><a href="#"
+                                class="hover:text-black transition flex items-center"><i
+                                    class="far fa-address-book mr-3 text-gray-400 w-5 text-center"></i> Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-dark">Newsletter</h3>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Email"
+                            class="w-full bg-white border border-gray-300 px-4 py-2 text-sm rounded focus:outline-none focus:border-brand-dark transition">
+                        <button
+                            class="bg-brand-dark text-white px-4 py-2 rounded text-sm font-medium hover:bg-black transition">Submit</button>
+                    </form>
+                    <div class="flex space-x-3 mt-4">
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-brand-dark rounded-full text-gray-600 shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                            <svg aria-hidden="true"
+                                class="w-5 h-5 fill-white group-hover:fill-white transition-all duration-300"
+                                viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
+                                </path>
+                            </svg></a>
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-brand-dark rounded-full shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                            <svg aria-hidden="true"
+                                class="w-5 h-5 fill-white group-hover:fill-white transition-all duration-300"
+                                viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 flex items-center justify-center bg-brand-dark rounded-full shadow-sm hover:bg-brand-orange group transition-all duration-300">
+                            <svg aria-hidden="true"
+                                class="w-5 h-5 fill-white group-hover:fill-white transition-all duration-300"
+                                viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2025 WHY TENNESSEE. All rights reserved.</p>
+                <a href="#" class="hover:text-brand-dark mt-2 md:mt-0 transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero Slider Logic
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function rotateSlides() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Start Slider Loop
+        setInterval(rotateSlides, 5000); // Change every 5 seconds
+    </script>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active-tab'));
+                contents.forEach(c => c.classList.add('hidden'));
+
+                tab.classList.add('active-tab');
+                document.getElementById(tab.dataset.tab).classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
