@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroovpn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --background-color: #ffffff;
+            --border-color: #e5e7eb;
+            --section-spacing: 2rem;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header & Logo Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-placeholder {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .app-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Title Section */
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .page-title .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .policy-section p {
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .policy-section ul, .policy-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .policy-section li {
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+        
+        .highlight-box {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 1rem;
+            }
+            
+            .header {
+                padding: 1.5rem 0;
+                margin-bottom: 2rem;
+            }
+            
+            .app-name {
+                font-size: 1.5rem;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .page-title .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content {
+                margin-bottom: 3rem;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .logo-container {
+                margin-bottom: 0.5rem;
+            }
+            
+            .page-title h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header, .page-title, .content {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .content {
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and App Name -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="#">
+                <img src="Icon01.png" alt="aroovpn" width="80">
+            </div>
+            <div class="app-name">Aroovpn</div>
+        </div>
+    </header>
+    
+    <!-- Page Title Section -->
+    <section class="page-title">
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">This document outlines how we collect, use, and protect your information when you use our application.</p>
+    </section>
+    
+    <!-- Privacy Policy Content -->
+    <main class="content">
+        <div class="policy-section">
+            <h2>Introduction</h2>
+            <p>Welcome to Aroovpn ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
+            <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.</p>
+        </div>
+        
+        <div class="policy-section">
+            <h2>Information We Collect</h2>
+            <p>We may collect information about you in a variety of ways. The information we may collect via the application includes:</p>
+            <ul>
+                <li><strong>Personal Data:</strong> Personally identifiable information, such as your name and email address, that you voluntarily give to us when you register with the application.</li>
+                <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the application, such as your IP address, device type, and operating system.</li>
+                <li><strong>Usage Data:</strong> Data about your use of the application, including usage statistics, feature interactions, and preferences.</li>
+            </ul>
+        </div>
+        
+        <div class="policy-section">
+            <h2>How We Use Your Information</h2>
+            <p>We use the information we collect in the following ways:</p>
+            <ol>
+                <li>To provide, operate, and maintain our application</li>
+                <li>To improve, personalize, and expand our application</li>
+                <li>To understand and analyze how you use our application</li>
+                <li>To develop new products, services, features, and functionality</li>
+                <li>To communicate with you for customer service, updates, and other related purposes</li>
+            </ol>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Data Protection:</strong> We implement appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure.</p>
+        </div>
+        
+        <div class="policy-section">
+            <h2>Third-Party Services</h2>
+            <p>We may use third-party service providers to help us operate our business and the application or administer activities on our behalf. These third parties have access to your personal information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+        </div>
+        
+        <div class="policy-section">
+            <h2>Your Privacy Rights</h2>
+            <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+            <ul>
+                <li>The right to access the personal information we have about you</li>
+                <li>The right to request correction or deletion of your personal information</li>
+                <li>The right to restrict or object to our processing of your personal information</li>
+                <li>The right to data portability</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+        </div>
+        
+        <div class="policy-section">
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the bottom of this Privacy Policy.</p>
+            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+        </div>
+        
+        <div class="policy-section">
+            <h2>Contact Us</h2>
+            <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+            <p>Email: privacy@Aroovpn.com<br>
+            Address: 123 App Street, Tech City, TC 12345</p>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> Aroovpn. All rights reserved.</p>
+        <p class="last-updated">Last updated: March 15, 2023</p>
+    </footer>
+    
+    <script>
+        // Simple script to set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Add smooth scrolling for anchor links (if any are added in the future)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
