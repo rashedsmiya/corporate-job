@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefining Luxury - Northside</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Added a subtle topographical pattern to the background */
+            background-color: #ffffff;
+            background-image: url("Comingsoon2.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+        }
+        
+        /* New Hero Background Image */
+        .hero-bg-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            /* background-image: url("Comingsoon2.svg"); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -2;
+            border-radius: 50%;
+        }
+
+        .geometric-shape {
+            position: absolute;
+            opacity: 0.8;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 43px solid #10b981;
+        }
+        
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .hexagon {
+            width: 50px;
+            height: 43px;
+            background: #e0e7ff;
+            position: relative;
+            opacity: 0.5;
+        }
+        
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+        
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 14px solid #e0e7ff;
+        }
+        
+        .hexagon:after {
+            top: 100%;
+            border-top: 14px solid #e0e7ff;
+        }
+        
+        .squiggle {
+            width: 60px;
+            height: 40px;
+        }
+        
+        .avatar-ring {
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .illustration-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="relative pt-16"> 
+        <header class="relative z-10">
+            <div class="container mx-auto flex justify-center">
+                <div>
+                    <img src="clothes.png" alt="">
+                </div>
+            </div>
+        </header>
+        
+        <main class="relative z-10 container mx-auto px-4 pt-12 ">
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex items-center border border-gray-200 rounded-full px-2 py-2 shadow-sm">
+                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                    <span class="text-sm text-gray-200">Launch Incoming</span>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl  text-white font-inter font-medium text-center mb-6 text-gray-900 leading-tight px-28">
+            Sign Up To Our Email List To Get<br> Notified When We Launch 
+            </h1>
+            
+            <p class="text-center text-white text-lg md:text-xl max-w-3xl mx-auto mb-8 px-4">An exclusive collection crafted for the bold. Experience the fusion of modern aesthetics and timeless elegance.</p>
+            
+            <div class="max-w-2xl mx-auto mb-6 px-4">
+                <form class="flex flex-col sm:flex-row gap-0 rounded-lg overflow-hidden">
+                    <input 
+                        type="email" 
+                        placeholder="Your Email" 
+                        class="flex-1 px-6 py-4 text-gray-700 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none"
+                        required
+                    />
+                    <button 
+                        type="submit" 
+                        class="bg-red-500 hover:bg-red-600 text-white font-semibold px-10 py-4 transition duration-300 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none"
+                    >
+                        Join
+                    </button>
+                </form>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <div class="flex -space-x-2 mb-1">
+                    <div class="w-10 h-10 rounded-full   overflow-hidden">
+                        <img src="Face 1.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-10 h-10 rounded-full   overflow-hidden">
+                        <img src="Face 2.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-10 h-10 rounded-full   overflow-hidden">
+                        <img src="Face 3.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="text-sm text-gray-200">Join 39k other creatives</p>
+            </div>             
+        </main>
+    </div>
+</body>
+</html>

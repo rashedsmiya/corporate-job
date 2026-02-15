@@ -10,8 +10,29 @@
         
         body {
             font-family: 'Inter', sans-serif;
+            /* Added a subtle topographical pattern to the background */
+            background-color: #ffffff;
+            background-image: url("Coming Soon.png");
         }
         
+        /* New Hero Background Image */
+        .hero-bg-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-image: url('Coming Soon.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -2;
+            border-radius: 50%;
+        }
+
         .geometric-shape {
             position: absolute;
             opacity: 0.8;
@@ -82,164 +103,92 @@
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
+
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .illustration-container {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
-<body class="bg-white overflow-x-hidden">
-    <!-- Main Container -->
-    <div class="relative min-h-screen">
-        <!-- Geometric Decorations -->
-        <div class="geometric-shape triangle" style="top: 50px; left: 15%;"></div>
-        <div class="geometric-shape circle bg-purple-300" style="top: 180px; left: 10%;"></div>
-        <div class="geometric-shape hexagon" style="bottom: 30%; left: 5%;"></div>
-        <div class="geometric-shape" style="bottom: 15%; left: 3%;">
-            <div class="w-6 h-6 bg-gray-300 opacity-50"></div>
-        </div>
-        
-        <div class="geometric-shape circle" style="top: 150px; right: 8%; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);"></div>
-        <div class="geometric-shape" style="top: 320px; right: 12%;">
-            <svg width="60" height="40" viewBox="0 0 60 40" class="squiggle">
-                <path d="M 5 20 Q 15 5, 25 20 T 45 20 T 55 20" stroke="#06b6d4" stroke-width="3" fill="none"/>
-            </svg>
-        </div>
-        <div class="geometric-shape circle bg-pink-500" style="bottom: 25%; right: 8%;"></div>
-        
-        <!-- Header -->
-        <header class="relative z-10 py-6">
+<body class="overflow-x-hidden">
+    <div class="relative"> 
+        <!-- Header with Responsive Logo -->
+        <header class="relative z-10 py-4 sm:py-6 md:py-2">
             <div class="container mx-auto px-4 flex justify-center">
-                <div class="bg-gray-800 text-white px-6 py-2 rounded-full shadow-lg">
-                    <span class="font-bold text-sm tracking-wider">NORTHSIDE</span>
+                <div class="w-32 sm:w-40 md:w-48 lg:w-auto">
+                    <img src="sauces.png" alt="Logo" class="w-full h-auto">
                 </div>
             </div>
         </header>
         
         <!-- Main Content -->
-        <main class="relative z-10 container mx-auto px-4 pt-12 pb-16">
+        <main class="relative z-10 container mx-auto px-4 pt-4 sm:pt-8 md:pt-10">
             <!-- Launch Badge -->
-            <div class="flex justify-center mb-8">
-                <div class="inline-flex items-center bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm">
-                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                    <span class="text-sm text-gray-700">Launch Incoming</span>
+            <div class="flex justify-center mb-4 sm:mb-6 md:mb-8">
+                <div class="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-sm">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-2"></span>
+                    <span class="text-xs sm:text-sm text-gray-700">Launch Incoming</span>
                 </div>
             </div>
             
-            <!-- Hero Title -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-center mb-6 text-gray-900 leading-tight">
+            <!-- Hero Title - Fully Responsive -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-[#1B1B1B] font-inter font-medium text-center mb-4 sm:mb-6 text-gray-900 leading-tight px-2">
                 Redefining Luxury
             </h1>
             
-            <!-- Subtitle -->
-            <p class="text-center text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-8 px-4">
+            <!-- Subtitle - Responsive Text Size -->
+            <p class="text-center text-[#262626] text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-6">
                 An exclusive collection crafted for the bold. Experience the fusion of modern aesthetics and timeless elegance.
             </p>
             
-            <!-- Email Form -->
-            <div class="max-w-2xl mx-auto mb-6 px-4">
-                <form class="flex flex-col sm:flex-row gap-0 shadow-lg rounded-lg overflow-hidden">
+            <!-- Email Form - Mobile Responsive -->
+            <div class="max-w-2xl mx-auto mb-4 sm:mb-6 px-4">
+                <form class="flex flex-col sm:flex-row gap-0 rounded-lg overflow-hidden shadow-lg">
                     <input 
                         type="email" 
                         placeholder="Your Email" 
-                        class="flex-1 px-6 py-4 text-gray-700 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none"
+                        class="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-gray-700 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none"
                         required
                     />
                     <button 
                         type="submit" 
-                        class="bg-red-500 hover:bg-red-600 text-white font-semibold px-10 py-4 transition duration-300 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none"
+                        class="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base transition duration-300 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none active:bg-red-700"
                     >
                         Join
                     </button>
                 </form>
             </div>
             
-            <!-- Social Proof -->
-            <div class="flex flex-col items-center mb-12">
-                <div class="flex -space-x-2 mb-2">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 avatar-ring"></div>
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 avatar-ring"></div>
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 avatar-ring"></div>
+            <!-- Social Proof - Responsive Avatars -->
+            <div class="flex flex-col items-center mb-8 sm:mb-12">
+                <div class="flex -space-x-2 mb-1 sm:mb-2">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-white">
+                        <img src="Face 1.png" alt="User avatar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-white">
+                        <img src="Face 2.png" alt="User avatar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-white">
+                        <img src="Face 3.png" alt="User avatar" class="w-full h-full object-cover">
+                    </div>
                 </div>
-                <p class="text-sm text-gray-600">Join 39k other creatives</p>
+                <p class="text-xs sm:text-sm text-[#4E4E4E]">Join 39k other creatives</p>
             </div>
             
-            <!-- Illustration -->
-            <div class="illustration-container mt-16">
-                <div class="relative float-animation">
-                    <!-- Large "01" Background Text -->
-                    <div class="absolute inset-0 flex items-center justify-center" style="z-index: -1;">
-                        <span class="text-gray-100 font-black" style="font-size: 20rem; line-height: 1; opacity: 0.3;">01</span>
-                    </div>
-                    
-                    <!-- Scooter Illustration Container -->
-                    <div class="relative z-10 flex justify-center items-center" style="min-height: 400px;">
-                        <svg width="500" height="400" viewBox="0 0 500 400" class="w-full max-w-md">
-                            <!-- Back Wheel -->
-                            <circle cx="180" cy="340" r="45" fill="#2d3748"/>
-                            <circle cx="180" cy="340" r="35" fill="#4a5568"/>
-                            <circle cx="180" cy="340" r="15" fill="#e5e7eb"/>
-                            
-                            <!-- Front Wheel -->
-                            <circle cx="370" cy="340" r="45" fill="#2d3748"/>
-                            <circle cx="370" cy="340" r="35" fill="#4a5568"/>
-                            <circle cx="370" cy="340" r="15" fill="#e5e7eb"/>
-                            
-                            <!-- Scooter Body Base -->
-                            <ellipse cx="275" cy="310" rx="130" ry="25" fill="#4a5568"/>
-                            <rect x="200" y="295" width="150" height="25" rx="12" fill="#2d3748"/>
-                            
-                            <!-- Scooter Handle -->
-                            <rect x="200" y="210" width="15" height="100" fill="#4a5568"/>
-                            <rect x="195" y="200" width="25" height="20" rx="10" fill="#2d3748"/>
-                            
-                            <!-- Storage Box -->
-                            <rect x="170" y="250" width="60" height="45" rx="5" fill="#9ca3af"/>
-                            <rect x="180" y="265" width="40" height="15" rx="3" fill="#4a5568"/>
-                            <rect x="188" y="270" width="24" height="5" fill="#6b7280"/>
-                            
-                            <!-- Person Legs -->
-                            <ellipse cx="240" cy="280" rx="20" ry="35" fill="#2d3748"/>
-                            <ellipse cx="285" cy="285" rx="22" ry="40" fill="#2d3748"/>
-                            <path d="M 230 295 Q 225 315, 235 330 L 245 325 Q 240 310, 245 295 Z" fill="#2d3748"/>
-                            <path d="M 280 305 Q 290 325, 305 335 L 310 325 Q 300 310, 295 300 Z" fill="#2d3748"/>
-                            
-                            <!-- Person Body -->
-                            <ellipse cx="255" cy="235" rx="35" ry="50" fill="#3b82f6"/>
-                            
-                            <!-- Person Arms -->
-                            <path d="M 235 240 Q 220 235, 210 220 L 218 215 Q 228 225, 240 230 Z" fill="#fca5a5"/>
-                            <path d="M 275 235 Q 290 225, 305 215 L 310 222 Q 295 232, 280 237 Z" fill="#fca5a5"/>
-                            
-                            <!-- Person Hands -->
-                            <circle cx="207" cy="217" r="8" fill="#fca5a5"/>
-                            <circle cx="312" cy="219" r="8" fill="#fca5a5"/>
-                            
-                            <!-- Person Head -->
-                            <circle cx="255" cy="180" r="28" fill="#fca5a5"/>
-                            
-                            <!-- Hair -->
-                            <path d="M 230 165 Q 220 145, 210 150 Q 205 160, 215 180 Q 225 195, 240 185" fill="#2d3748"/>
-                            <path d="M 255 152 Q 245 135, 235 140 Q 230 155, 245 170" fill="#2d3748"/>
-                            <ellipse cx="245" cy="165" rx="45" ry="25" fill="#2d3748" transform="rotate(-10 245 165)"/>
-                            
-                            <!-- Hair Flowing -->
-                            <path d="M 210 180 Q 180 190, 165 185 Q 160 195, 175 210 Q 190 220, 205 210" fill="#2d3748"/>
-                            <path d="M 205 210 Q 185 225, 175 235 Q 180 245, 195 245 Q 210 235, 215 220" fill="#2d3748"/>
-                            <ellipse cx="190" cy="215" rx="35" ry="55" fill="#2d3748" transform="rotate(-25 190 215)"/>
-                            
-                            <!-- Face Details -->
-                            <circle cx="245" cy="180" r="2" fill="#2d3748"/>
-                            <circle cx="265" cy="180" r="2" fill="#2d3748"/>
-                            <path d="M 248 190 Q 255 193, 262 190" stroke="#2d3748" stroke-width="1.5" fill="none"/>
-                            
-                            <!-- Shirt Details -->
-                            <ellipse cx="255" cy="250" rx="25" ry="15" fill="#2563eb" opacity="0.3"/>
-                            
-                            <!-- Blue Accents on Scooter -->
-                            <path d="M 340 295 L 380 295 L 370 315 L 350 315 Z" fill="#3b82f6"/>
-                            <circle cx="355" cy="305" r="8" fill="#60a5fa"/>
-                            <rect x="300" y="300" width="30" height="12" rx="6" fill="#3b82f6"/>
-                        </svg>
-                    </div>
+            <!-- Illustration - Fully Responsive Sizing -->
+            <div class="illustration-container mb-12 sm:mb-16 lg:mb-20">
+            <div class="relative">
+                <div class="relative z-10 flex justify-center items-center px-4">
+                    <img 
+                        src="undraw_On_the_way_re_swjt 1.png" 
+                        alt="Illustration" 
+                        class=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl h-auto"
+                    >
                 </div>
             </div>
+        </div>
         </main>
     </div>
 </body>
