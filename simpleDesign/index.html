@@ -13,26 +13,12 @@
             /* Added a subtle topographical pattern to the background */
             background-color: #ffffff;
             background-image: url("Coming Soon.png");
-        }
-        
-        /* New Hero Background Image */
-        .hero-bg-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            background-image: url('Coming Soon.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(80px);
-            opacity: 0.15;
-            z-index: -2;
-            border-radius: 50%;
-        }
-
+            
+        }      
+        
         .geometric-shape {
             position: absolute;
             opacity: 0.8;
@@ -124,7 +110,7 @@
         </header>
         
         <!-- Main Content -->
-        <main class="relative z-10 container mx-auto px-4 pt-4 sm:pt-8 md:pt-10">
+        <main class="relative z-10 container mx-auto px-4 pt-4 sm:pt-4 md:pt-4">
             <!-- Launch Badge -->
             <div class="flex justify-center mb-4 sm:mb-6 md:mb-8">
                 <div class="inline-flex items-center bg-white border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-sm">
@@ -145,7 +131,7 @@
             
             <!-- Email Form - Mobile Responsive -->
             <div class="max-w-2xl mx-auto mb-4 sm:mb-6 px-4">
-                <form class="flex flex-col sm:flex-row gap-0 rounded-lg overflow-hidden shadow-lg">
+                <form class="flex flex-col sm:flex-row gap-0 rounded-lg overflow-hidden">
                     <input 
                         type="email" 
                         placeholder="Your Email" 
@@ -178,7 +164,7 @@
             </div>
             
             <!-- Illustration - Fully Responsive Sizing -->
-            <div class="illustration-container mb-12 sm:mb-16 lg:mb-20">
+            <div class="illustration-container sm:mb-16 lg:mb-7">
                 <div class="relative">
                     <div class="relative z-10 flex justify-center items-center px-4">
                         <img 
