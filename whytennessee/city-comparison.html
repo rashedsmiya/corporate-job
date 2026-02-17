@@ -803,43 +803,6 @@
         </div>
     </footer>
 
-    <script>
-        // Toggle Mobile Menu
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        navToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Hero Slider Logic
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        function rotateSlides() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        // Start Slider Loop
-        setInterval(rotateSlides, 5000); // Change every 5 seconds
-    </script>
-
-    <script>
-        const tabs = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.tab-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active-tab'));
-                contents.forEach(c => c.classList.add('hidden'));
-
-                tab.classList.add('active-tab');
-                document.getElementById(tab.dataset.tab).classList.remove('hidden');
-            });
-        });
-    </script>
 
 </body>
 
