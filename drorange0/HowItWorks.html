@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BathPro Remodeling – Transform Your Bathroom in Days, Not Weeks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1a56ff;
+      --blue-dark: #0f3bcc;
+      --blue-light: #e8edff;
+      --text: #0d1117;
+      --muted: #6b7280;
+    }
+    body { font-family: 'Inter', serif; color: var(--text); }
+    h1,h2,h3 { font-family: 'Inter', serif; }
+
+    /* Hero */
+    .hero-bg {
+      background-color: #092abdd2;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;  
+      
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img/ImageWithFallback.png') center/cover no-repeat;
+      opacity: 0.18;
+      background-size: cover;
+      background-position: center;  
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-primary {
+      background: #fff;
+      color: var(--blue);
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.65rem 1.4rem;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .btn-primary:hover { background: #e8edff; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,86,255,0.25); }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.65rem 1.4rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.75rem 1.75rem;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,86,255,0.35); }
+
+    /* Cards */
+    .service-card {
+      border: 1px solid #e5e9f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 8px 28px rgba(2, 3, 7, 0.1);
+    }
+    .service-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(26,86,255,0.1); transform: translateY(-3px); }
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-icon svg { color: var(--blue); }
+
+    /* Steps */
+    .step-circle {
+      width: 48px; height: 48px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Arial', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    /* Review */
+    .review-card {
+      background: #fff;
+      border: 1px solid #e5e9f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 8px 28px rgba(2, 3, 7, 0.1);
+    }
+    .review-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(26,86,255,0.1); transform: translateY(-3px); }
+    .star { color: #f59e0b; }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(#092abdd2);
+    }
+
+    /* Nav */
+    nav a { transition: color 0.15s; }
+    nav a:hover { color: var(--blue); }
+
+    /* Stat */
+    .stat-num {
+      font-family: 'Inter', serif;
+      font-size:32px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.35s; opacity: 0; }
+    .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+    /* Divider */
+    .section-label {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer { background: #0d1117; }
+    footer a { color: #9ca3af; transition: color 0.15s; }
+    footer a:hover { color: #fff; }
+
+    /* Step number circle */
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Step icon box */
+    .step-icon {
+      background-color: #EFF6FF;
+      width: 66px; height: 66px; 
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #6b7280;
+      flex-shrink: 0;
+    }
+
+    /* Timeline card */
+    .timeline-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(26,86,255,0.08);
+    }
+    .timeline-num {
+      font-size: 1.9rem; font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    /* Inform card */
+    .inform-card {
+      /* background: #fff; */
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .inform-card:hover { border-color: var(--blue); box-shadow: 0 6px 20px rgba(26,86,255,0.08); transform: translateY(-2px); }
+    .inform-icon {
+      width: 55px; height: 55px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .faq-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 0; cursor: pointer; background: none; border: none;
+      text-align: left; font-size: 0.9rem; font-weight: 600; color: #111827;
+      transition: color 0.15s;
+    }
+    .faq-btn:hover { color: var(--blue); }
+    .faq-icon { width: 20px; height: 20px; border: 1.5px solid #d1d5db; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #6b7280; }
+    .faq-body { display: none; padding-bottom: 1rem; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+    .faq-item.open .faq-body { display: block; }
+    .faq-item.open .faq-icon { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .faq-item.open .faq-btn { color: var(--blue); }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(135deg, #1233bb 0%, #2445d4 50%, #3b63f5 100%);
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.6rem; border-radius: 7px;
+      border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; color: var(--blue);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.75rem; border-radius: 7px;
+      border: 2px solid #fff; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-white:hover { background: #eef2ff; transform: translateY(-1px); }
+ 
+
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- ── NAVBAR ── -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="#" class="text-lg font-bold" style="font-family:'Inter',serif; color:var(--blue)">BathPro Remodeling</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-900">
+      <a href="#">Home</a>
+      <a href="#">Bathroom Remodeling</a>
+      <a href="#">How It Works</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Track Order</a>
+    </nav>
+    <a href="#estimate" class="btn-blue text-sm hidden md:inline-block">Get Free Estimate</a>
+    <button class="md:hidden text-gray-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+ 
+<section class="#">
+
+    <!-- Header -->
+    <div class="text-center bg-[#193CB8] p-24">
+      <h2 class="text-5xl font-black text-white mb-3 font-arial font-medium ">How It Works</h2>
+      <p class="text-gray-100 text-lg max-w-2xl mx-auto leading-relaxed">
+        Our streamlined process makes bathroom remodeling simple, transparent, and stress-free. From estimate to completion in just a few easy steps.
+      </p>
+    </div>
+
+<!-- ══════════════════════════════ HOW IT WORKS STEPS ══════════════════════════════ -->
+<section class="py-12 ">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Steps -->
+    <div class="space-y-4">
+
+      <!-- Step 1 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">1</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>    
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Submit Your Request Online</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">2–3 minutes</p>
+            <p class="text-gray-500 text-sm leading-relaxed font-inter text-wrap">Fill out our simple online form on your desktop, tablet, or phone. In 2–3 minutes describe your bathroom remodeling project. Upload photos from multiple angles, mark the areas you need remodeled, and choose the services you want – tile, flooring, vanity, tub-to-shower, and more.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">2</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Choose Your Options</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">5 minutes</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Select from our comprehensive list of services including new fixtures, tile work, flooring, and plumbing. Set any special requests or details about your needs. Tell us about your preferred timeline and budget range.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">3</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Verify Your Mobile Number</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">1 minute</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We send a quick verification code to your phone to confirm you're a real person, not a bot. This is how we can reach you with your estimate and updates.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">4</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Receive Your Estimate</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">Within 24 hours</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Within 24 hours, our team reviews your photos and selections. The Estimate is detailed and sent via SMS with pricing breakdown and project timeline. Work also sends a confirmation email with the full details.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">5</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Review &amp; Approve</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">Your timeline</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Read your estimate in detail, ask questions, or request adjustments – name a new price. When you're ready, simply approve the estimate online or via text.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">6</div>
+          <div class="step-line h-full min-h-16 mt-2"></div>
+        </div>
+        <div class="flex-1 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">Schedule Your Project</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">1–3 days out</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Once approved, we'll contact you to schedule a convenient start date. Most bathroom remodels are completed in 5–10 days. Track your project status anytime using your project ID.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 (last, no line) -->
+      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
+        <div class="flex flex-col items-center">
+          <div class="step-num">7</div>
+        </div>
+        <div class="flex-1 pb-4 flex justify-between items-start gap-4">
+          <div class="flex-1">
+            <h3 class="font-medium text-gray-900 text-xl mb-1">We Complete Your Bathroom</h3>
+            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">5–10 days</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Our licensed professionals arrive on schedule and complete your remodel with minimal disruption. The entire process – including demo, installation, plumbing, and cleanup – is handled by our team. Daily updates keep you informed of progress.</p>
+          </div>
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ TOTAL TIMELINE ══════════════════════════════ -->
+<section class="py-24 bg-[#EFF6FF] max-w-7xl mx-auto">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-center text-2xl font-semibold text-gray-900 mb-6 font-arial tracking-wider">Total Timeline</p>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="timeline-card">
+        <div class="timeline-num">10 min</div>
+        <p class="text-md text-gray-500 mt-1.5">Request Process</p>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-num">24 hrs</div>
+        <p class="text-md text-gray-500 mt-1.5">Estimate Delivery</p>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-num">5-10 days</div>
+        <p class="text-md text-gray-500 mt-1.5">Project Completion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ STAY INFORMED ══════════════════════════════ -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-3xl font-black text-gray-900 mb-2 font-bold">Stay Informed Every Step</h2>
+      <p class="text-gray-500 text-sm max-w-xl mx-auto">Our platform keeps you updated throughout your bathroom renovation.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="inform-card px-4">
+        <div class="inform-icon">
+          <img src="img/📱 (1).png" alt="">
+        </div>
+        <h4 class="font-medium text-gray-900 text-xl mb-1">Track Your Project Online</h4>
+        <p class="text-gray-500 text-xs leading-relaxed">Use our project link or mobile app to check project status and review your estimate at any time.</p>
+      </div>
+
+      <div class="inform-card px-4">
+        <div class="inform-icon bg-yellow-50">
+          <img src="img/🔔.png" alt="">
+        </div>
+        <h4 class="font-medium text-gray-900 text-xl mb-1">Missing Item Reminders</h4>
+        <p class="text-gray-500 text-xs leading-relaxed">If we still need information or documents to proceed, we'll send you a reminder automatically.</p>
+      </div>
+
+      <div class="inform-card px-4">
+        <div class="inform-icon bg-blue-50">
+          <img src="img/💬.png" alt="">
+        </div>
+        <h4 class="font-medium text-gray-900 text-xl mb-1">SMS Updates</h4>
+        <p class="text-gray-500 text-xs leading-relaxed">Receive text message notifications at important updates such as estimate ready and project milestones.</p>
+      </div>
+
+      <div class="inform-card px-4">
+        <div class="inform-icon bg-green-50">
+          <img src="img/💰.png" alt="">
+        </div>
+        <h4 class="font-medium text-gray-900 text-xl mb-1">No Surprises</h4>
+        <p class="text-gray-500 text-xs leading-relaxed">Our detailed estimates include everything. No hidden costs, no unexpected charges.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-2xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-black text-gray-900">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-0">
+
+      <div class="faq-item open">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          How accurate are the online estimates?
+          <span class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-body">
+          Our estimates are very accurate because they're based on your actual photos and specific selections. We use precise pricing databases to generate quotes, and we account for regional labor and material costs. Actual project costs are typically within 5% of the initial estimate.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What if I need to change something?
+          <span class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
+          </span>
+        </button>
+        <div class="faq-body">
+          No problem! Before approving your estimate, you can request any changes or modifications. After approval, our team can discuss modifications, though they may impact the timeline and pricing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Do I really get my estimate in 24 hours?
+          <span class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
+          </span>
+        </button>
+        <div class="faq-body">
+          Yes! Our team reviews your submission and prepares a detailed estimate within 24 hours (business days). You'll receive both a text notification and email when it's ready.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What photos should I take?
+          <span class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
+          </span>
+        </button>
+        <div class="faq-body">
+          Take 4–6 photos from each corner of your bathroom. Make sure to capture all walls, the floor, the ceiling, and any fixtures you want replaced or updated. Clear, well-lit photos help us provide the most accurate estimate possible.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Is the mobile verification required?
+          <span class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12"/></svg>
+          </span>
+        </button>
+        <div class="faq-body">
+          Yes, mobile verification is how we confirm estimates and ensure we can reach you with your estimate. Your phone number and all personal details are secured with our privacy policy and will never be shared with third parties.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ CTA ══════════════════════════════ -->
+<section class="cta-section py-16 text-white text-center">
+  <div class="max-w-xl mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">Ready to Get Started?</h2>
+    <p class="text-white/80 text-sm mb-8 leading-relaxed">
+      Request your free estimate now and receive your detailed quote within 24 hours.
+    </p>
+    <button class="btn-white">
+      Start Your Bathroom Remodel
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+ 
+ 
+
+<!-- ── FOOTER ── -->
+
+<footer class="py-14 bg-[#0d1117]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Top grid: 3 columns matching screenshot -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Col 1: Brand + contact -->
+      <div class="max-w-xs">
+        <p class="text-base font-bold text-white mb-3" style="font-family:'Inter',serif;">BathPro Remodeling</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-5">Professional bathroom remodeling services with quality craftsmanship.</p>
+        <ul class="text-sm text-gray-400 space-y-2.5">
+
+          <li class="flex items-center gap-2.5">
+            <!-- Phone icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <g clip-path="url(#clip_phone)">
+                <path d="M9.22003 11.046C9.35772 11.1092 9.51283 11.1237 9.65983 11.0869C9.80682 11.0502 9.93692 10.9645 10.0287 10.844L10.2654 10.534C10.3896 10.3684 10.5506 10.234 10.7357 10.1414C10.9209 10.0488 11.125 10.0007 11.332 10.0007H13.332C13.6857 10.0007 14.0248 10.1411 14.2748 10.3912C14.5249 10.6412 14.6654 10.9804 14.6654 11.334V13.334C14.6654 13.6876 14.5249 14.0267 14.2748 14.2768C14.0248 14.5268 13.6857 14.6673 13.332 14.6673C10.1494 14.6673 7.09719 13.403 4.84675 11.1526C2.59631 8.90216 1.33203 5.84992 1.33203 2.66732C1.33203 2.3137 1.47251 1.97456 1.72256 1.72451C1.9726 1.47446 2.31174 1.33398 2.66536 1.33398H4.66536C5.01899 1.33398 5.35812 1.47446 5.60817 1.72451C5.85822 1.97456 5.9987 2.3137 5.9987 2.66732V4.66732C5.9987 4.87431 5.9505 5.07846 5.85793 5.2636C5.76536 5.44874 5.63096 5.60979 5.46536 5.73398L5.15336 5.96798C5.03098 6.06144 4.94471 6.19437 4.90923 6.34422C4.87374 6.49406 4.89122 6.65157 4.9587 6.78998C5.86982 8.64056 7.36831 10.1372 9.22003 11.046Z"
+                  stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip_phone"><rect width="16" height="16" fill="white"/></clipPath>
+              </defs>
+            </svg>
+            (555) 123-4567
+          </li>
+
+          <li class="flex items-center gap-2.5">
+            <!-- Mail icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M2.66667 2.66699H13.3333C14.0667 2.66699 14.6667 3.26699 14.6667 4.00033V12.0003C14.6667 12.7337 14.0667 13.3337 13.3333 13.3337H2.66667C1.93333 13.3337 1.33333 12.7337 1.33333 12.0003V4.00033C1.33333 3.26699 1.93333 2.66699 2.66667 2.66699Z"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.6667 4L8 8.66667L1.33333 4"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            info@bathproremodeling.com
+          </li>
+
+          <li class="flex items-center gap-2.5">
+            <!-- Location icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M8.00033 1.33301C5.79333 1.33301 4.00033 3.12601 4.00033 5.33301C4.00033 8.33301 8.00033 14.6663 8.00033 14.6663C8.00033 14.6663 12.0003 8.33301 12.0003 5.33301C12.0003 3.12601 10.2073 1.33301 8.00033 1.33301Z"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8.00033" cy="5.33301" r="1.33333"
+                stroke="#99A1AF" stroke-width="1.33333"/>
+            </svg>
+            Serving Your Area
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <p class="text-white font-semibold mb-4 text-md font-inter">Quick Links</p>
+        <ul class="space-y-2.5 text-md text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Get Started -->
+      <div>
+        <p class="text-white font-semibold mb-4 text-md font-inter">Get Started</p>
+        <ul class="space-y-2.5 text-md text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tub to Shower Conversion</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tile Installation</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vanity Replacement</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Plumbing Updates</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-gray-400 text-xs">© 2025 BathPro Remodeling. All Rights Reserved.</p>
+      <div class="flex gap-5 text-xs">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
