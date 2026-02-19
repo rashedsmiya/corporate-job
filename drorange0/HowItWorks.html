@@ -17,6 +17,148 @@
     body { font-family: 'Inter', serif; color: var(--text); }
     h1,h2,h3 { font-family: 'Inter', serif; }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f9fafb; }
+
+    
+
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+
+    .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+    .space-y-4 > * + * { margin-top: 1rem; }
+
+    /* Step card */
+    .step-card {
+      display: flex;
+      gap: 1.25rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin: 1rem;
+      background: #fff;
+    }
+
+    /* Left column: number + line */
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      /* width: 2px; */
+      background: #e5e7eb;
+      flex: 1;
+      min-height: 4rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Right content row */
+    .step-content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .step-text { flex: 1; }
+
+    .step-title {
+      font-weight: 500;
+      color: #111827;
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-time {
+      color: #9ca3af;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      color: #6b7280;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .step-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .step-card {
+        padding: 1.25rem;
+        margin: 0.5rem 0;
+        gap: 0.875rem;
+      }
+
+      .step-title {
+        font-size: 1rem;
+      }
+
+      /* Stack icon below text on very small screens */
+      .step-content {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .step-icon {
+        /* Move icon to top-right via absolute trick: instead just reorder */
+        align-self: flex-end;
+      }
+
+      /* Icon sizing */
+      .step-icon svg {
+        width: 1.75rem !important;
+        height: 1.75rem !important;
+      }
+
+      .step-line {
+        min-height: 2rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .step-card {
+        padding: 1.5rem;
+        margin: 0.5rem;
+      }
+
+      .step-title { font-size: 1.1rem; }
+    }
+
+    /* Outer padding tweak on mobile */
+    @media (max-width: 640px) {
+      .px-6 { padding-left: 1rem; padding-right: 1rem; }
+    }
+
     /* Hero */
     .hero-bg {
       background-color: #092abdd2;
@@ -116,7 +258,7 @@
 
     /* CTA section */
     .cta-section {
-      background: linear-gradient(#092abdd2);
+      background: linear-gradient(#155DFC);
     }
 
     /* Nav */
@@ -215,11 +357,12 @@
     /* FAQ */
     .faq-item {
       border-bottom: 1px solid #e5e7eb;
+      
     }
     .faq-btn {
       width: 100%; display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 0; cursor: pointer; background: none; border: none;
-      text-align: left; font-size: 0.9rem; font-weight: 600; color: #111827;
+      text-align: left; font-size: 0.9rem; font-weight: 500; color: #0A0A0A;
       transition: color 0.15s;
     }
     .faq-btn:hover { color: var(--blue); }
@@ -230,9 +373,11 @@
     .faq-item.open .faq-icon { background: var(--blue); border-color: var(--blue); color: #fff; }
     .faq-item.open .faq-btn { color: var(--blue); }
 
+    /* Stats */
+
     /* CTA section */
     .cta-section {
-      background: linear-gradient(135deg, #1233bb 0%, #2445d4 50%, #3b63f5 100%);
+      background: linear-gradient(#155DFC);
     }
     .btn-blue {
       display: inline-flex; align-items: center; gap: 7px;
@@ -276,36 +421,34 @@
 </header>
  
 <section class="#">
-
     <!-- Header -->
-    <div class="text-center bg-[#193CB8] p-24">
-      <h2 class="text-5xl font-black text-white mb-3 font-arial font-medium ">How It Works</h2>
-      <p class="text-gray-100 text-lg max-w-2xl mx-auto leading-relaxed">
+    <div class="text-center bg-[#193CB8] lg:p-24 p-12">
+      <h2 class="lg:text-5xl text-3xl font-black text-white mb-3 font-arial font-medium ">How It Works</h2>
+      <p class="text-gray-100 lg:text-lg text-base font-medium  max-w-2xl mx-auto leading-relaxed">
         Our streamlined process makes bathroom remodeling simple, transparent, and stress-free. From estimate to completion in just a few easy steps.
       </p>
     </div>
 
 <!-- ══════════════════════════════ HOW IT WORKS STEPS ══════════════════════════════ -->
-<section class="py-12 ">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <!-- Steps -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-6">
     <div class="space-y-4">
 
       <!-- Step 1 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">1</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>    
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Submit Your Request Online</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">2–3 minutes</p>
-            <p class="text-gray-500 text-sm leading-relaxed font-inter text-wrap">Fill out our simple online form on your desktop, tablet, or phone. In 2–3 minutes describe your bathroom remodeling project. Upload photos from multiple angles, mark the areas you need remodeled, and choose the services you want – tile, flooring, vanity, tub-to-shower, and more.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Submit Your Request Online</h3>
+            <p class="step-time">2–3 minutes</p>
+            <p class="step-desc">Fill out our simple online form on your desktop, tablet, or phone. In 2–3 minutes describe your bathroom remodeling project. Upload photos from multiple angles, mark the areas you need remodeled, and choose the services you want – tile, flooring, vanity, tub-to-shower, and more.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
             </svg>
           </div>
@@ -313,19 +456,19 @@
       </div>
 
       <!-- Step 2 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">2</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Choose Your Options</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">5 minutes</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Select from our comprehensive list of services including new fixtures, tile work, flooring, and plumbing. Set any special requests or details about your needs. Tell us about your preferred timeline and budget range.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Choose Your Options</h3>
+            <p class="step-time">5 minutes</p>
+            <p class="step-desc">Select from our comprehensive list of services including new fixtures, tile work, flooring, and plumbing. Set any special requests or details about your needs. Tell us about your preferred timeline and budget range.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
             </svg>
           </div>
@@ -333,19 +476,19 @@
       </div>
 
       <!-- Step 3 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">3</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Verify Your Mobile Number</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">1 minute</p>
-            <p class="text-gray-500 text-sm leading-relaxed">We send a quick verification code to your phone to confirm you're a real person, not a bot. This is how we can reach you with your estimate and updates.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Verify Your Mobile Number</h3>
+            <p class="step-time">1 minute</p>
+            <p class="step-desc">We send a quick verification code to your phone to confirm you're a real person, not a bot. This is how we can reach you with your estimate and updates.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
             </svg>
           </div>
@@ -353,19 +496,19 @@
       </div>
 
       <!-- Step 4 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">4</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Receive Your Estimate</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">Within 24 hours</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Within 24 hours, our team reviews your photos and selections. The Estimate is detailed and sent via SMS with pricing breakdown and project timeline. Work also sends a confirmation email with the full details.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Receive Your Estimate</h3>
+            <p class="step-time">Within 24 hours</p>
+            <p class="step-desc">Within 24 hours, our team reviews your photos and selections. The Estimate is detailed and sent via SMS with pricing breakdown and project timeline. Work also sends a confirmation email with the full details.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
             </svg>
           </div>
@@ -373,19 +516,19 @@
       </div>
 
       <!-- Step 5 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">5</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Review &amp; Approve</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">Your timeline</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Read your estimate in detail, ask questions, or request adjustments – name a new price. When you're ready, simply approve the estimate online or via text.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Review &amp; Approve</h3>
+            <p class="step-time">Your timeline</p>
+            <p class="step-desc">Read your estimate in detail, ask questions, or request adjustments – name a new price. When you're ready, simply approve the estimate online or via text.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
@@ -393,19 +536,19 @@
       </div>
 
       <!-- Step 6 -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">6</div>
-          <div class="step-line h-full min-h-16 mt-2"></div>
+          <div class="step-line"></div>
         </div>
-        <div class="flex-1 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">Schedule Your Project</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">1–3 days out</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Once approved, we'll contact you to schedule a convenient start date. Most bathroom remodels are completed in 5–10 days. Track your project status anytime using your project ID.</p>
+        <div class="step-content">
+          <div class="step-text">
+            <h3 class="step-title">Schedule Your Project</h3>
+            <p class="step-time">1–3 days out</p>
+            <p class="step-desc">Once approved, we'll contact you to schedule a convenient start date. Most bathroom remodels are completed in 5–10 days. Track your project status anytime using your project ID.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
             </svg>
           </div>
@@ -413,18 +556,18 @@
       </div>
 
       <!-- Step 7 (last, no line) -->
-      <div class="flex gap-5 border-gray-200 border rounded-lg p-8 m-4">
-        <div class="flex flex-col items-center">
+      <div class="step-card">
+        <div class="step-left">
           <div class="step-num">7</div>
         </div>
-        <div class="flex-1 pb-4 flex justify-between items-start gap-4">
-          <div class="flex-1">
-            <h3 class="font-medium text-gray-900 text-xl mb-1">We Complete Your Bathroom</h3>
-            <p class="text-gray-400 text-[11px] font-medium mb-2 uppercase tracking-wide">5–10 days</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Our licensed professionals arrive on schedule and complete your remodel with minimal disruption. The entire process – including demo, installation, plumbing, and cleanup – is handled by our team. Daily updates keep you informed of progress.</p>
+        <div class="step-content" style="padding-bottom: 1rem;">
+          <div class="step-text">
+            <h3 class="step-title">We Complete Your Bathroom</h3>
+            <p class="step-time">5–10 days</p>
+            <p class="step-desc">Our licensed professionals arrive on schedule and complete your remodel with minimal disruption. The entire process – including demo, installation, plumbing, and cleanup – is handled by our team. Daily updates keep you informed of progress.</p>
           </div>
           <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#155DFC" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
             </svg>
           </div>
@@ -435,11 +578,12 @@
   </div>
 </section>
 
+
 <!-- ══════════════════════════════ TOTAL TIMELINE ══════════════════════════════ -->
-<section class="py-24 bg-[#EFF6FF] max-w-7xl mx-auto">
+<section class="lg:py-24 py-12 bg-[#EFF6FF] max-w-7xl mx-auto">
   <div class="max-w-5xl mx-auto px-6">
     <p class="text-center text-2xl font-semibold text-gray-900 mb-6 font-arial tracking-wider">Total Timeline</p>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
       <div class="timeline-card">
         <div class="timeline-num">10 min</div>
         <p class="text-md text-gray-500 mt-1.5">Request Process</p>
@@ -457,10 +601,10 @@
 </section>
 
 <!-- ══════════════════════════════ STAY INFORMED ══════════════════════════════ -->
-<section class="py-16 bg-white">
+<section class="lg:py-16 py-8 bg-white">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-3xl font-black text-gray-900 mb-2 font-bold">Stay Informed Every Step</h2>
+      <h2 class="text-2xl lg:text-3xl font-black text-gray-900 mb-2 font-bold">Stay Informed Every Step</h2>
       <p class="text-gray-500 text-sm max-w-xl mx-auto">Our platform keeps you updated throughout your bathroom renovation.</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -502,15 +646,15 @@
 </section>
 
 <!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-2xl mx-auto px-6">
+<section class="lg:py-16 py-8 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-black text-gray-900">Frequently Asked Questions</h2>
+      <h2 class="text-2xl md:text-3xl font-black text-gray-900 font-bold font-inter">Frequently Asked Questions</h2>
     </div>
 
-    <div class="space-y-0">
+    <div class="space-y-4">
 
-      <div class="faq-item open">
+      <div class="faq-item open bg-white p-2 border-b border-gray-100 rounded-lg shadow-md">
         <button class="faq-btn" onclick="toggleFaq(this)">
           How accurate are the online estimates?
           <span class="faq-icon">
@@ -522,7 +666,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item bg-white p-2 border-b border-gray-100 rounded-lg shadow-md">
         <button class="faq-btn" onclick="toggleFaq(this)">
           What if I need to change something?
           <span class="faq-icon">
@@ -534,7 +678,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item bg-white p-2 border-b border-gray-100 rounded-lg shadow-md">
         <button class="faq-btn" onclick="toggleFaq(this)">
           Do I really get my estimate in 24 hours?
           <span class="faq-icon">
@@ -546,7 +690,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item bg-white p-2 border-b border-gray-100 rounded-lg shadow-md">
         <button class="faq-btn" onclick="toggleFaq(this)">
           What photos should I take?
           <span class="faq-icon">
@@ -558,7 +702,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item bg-white p-2 border-b border-gray-100 rounded-lg shadow-md">
         <button class="faq-btn" onclick="toggleFaq(this)">
           Is the mobile verification required?
           <span class="faq-icon">
@@ -575,9 +719,9 @@
 </section>
 
 <!-- ══════════════════════════════ CTA ══════════════════════════════ -->
-<section class="cta-section py-16 text-white text-center">
+<section class="cta-section py-16 text-white text-center max-w-6xl mx-auto">
   <div class="max-w-xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black mb-3">Ready to Get Started?</h2>
+    <h2 class="text-2xl md:text-3xl font-black mb-3 font-inter font-bold">Ready to Get Started?</h2>
     <p class="text-white/80 text-sm mb-8 leading-relaxed">
       Request your free estimate now and receive your detailed quote within 24 hours.
     </p>
@@ -685,6 +829,25 @@
 </footer>
 
 </div>
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
 
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
 </body>
 </html>
