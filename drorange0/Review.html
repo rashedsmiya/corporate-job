@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BathPro Remodeling – Transform Your Bathroom in Days, Not Weeks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1a56ff;
+      --blue-dark: #0f3bcc;
+      --blue-light: #e8edff;
+      --text: #0d1117;
+      --muted: #6b7280;
+    }
+    body { font-family: 'Inter', serif; color: var(--text); }
+    h1,h2,h3 { font-family: 'Inter', serif; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f9fafb; }
+
+    
+
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+
+    .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+    .space-y-4 > * + * { margin-top: 1rem; }
+
+    /* Step card */
+    .step-card {
+      display: flex;
+      gap: 1.25rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin: 1rem;
+      background: #fff;
+    }
+
+    /* Left column: number + line */
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      /* width: 2px; */
+      background: #e5e7eb;
+      flex: 1;
+      min-height: 4rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Right content row */
+    .step-content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .step-text { flex: 1; }
+
+    .step-title {
+      font-weight: 500;
+      color: #111827;
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-time {
+      color: #9ca3af;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      color: #6b7280;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .step-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .step-card {
+        padding: 1.25rem;
+        margin: 0.5rem 0;
+        gap: 0.875rem;
+      }
+
+      .step-title {
+        font-size: 1rem;
+      }
+
+      /* Stack icon below text on very small screens */
+      .step-content {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .step-icon {
+        /* Move icon to top-right via absolute trick: instead just reorder */
+        align-self: flex-end;
+      }
+
+      /* Icon sizing */
+      .step-icon svg {
+        width: 1.75rem !important;
+        height: 1.75rem !important;
+      }
+
+      .step-line {
+        min-height: 2rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      .step-card {
+        padding: 1.5rem;
+        margin: 0.5rem;
+      }
+
+      .step-title { font-size: 1.1rem; }
+    }
+
+    /* Outer padding tweak on mobile */
+    @media (max-width: 640px) {
+      .px-6 { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* Hero */
+    .hero-bg {
+      background-color: #092abdd2;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;  
+      
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img/ImageWithFallback.png') center/cover no-repeat;
+      opacity: 0.18;
+      background-size: cover;
+      background-position: center;  
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-primary {
+      background: #fff;
+      color: var(--blue);
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.65rem 1.4rem;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .btn-primary:hover { background: #e8edff; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,86,255,0.25); }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.65rem 1.4rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.75rem 1.75rem;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,86,255,0.35); }
+
+    /* Cards */
+    .service-card {
+      border: 1px solid #e5e9f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 8px 28px rgba(2, 3, 7, 0.1);
+    }
+    .service-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(26,86,255,0.1); transform: translateY(-3px); }
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-icon svg { color: var(--blue); }
+
+    /* Steps */
+    .step-circle {
+      width: 48px; height: 48px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Arial', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    /* Review */
+    .review-card {
+      background: #fff;
+      border: 1px solid #e5e9f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 8px 28px rgba(2, 3, 7, 0.1);
+    }
+    .review-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(26,86,255,0.1); transform: translateY(-3px); }
+    .star { color: #f59e0b; }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(#155DFC);
+    }
+
+    /* Nav */
+    nav a { transition: color 0.15s; }
+    nav a:hover { color: var(--blue); }
+
+    /* Stat */
+    .stat-num {
+      font-family: 'Inter', serif;
+      font-size:32px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.35s; opacity: 0; }
+    .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+    /* Divider */
+    .section-label {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer { background: #0d1117; }
+    footer a { color: #9ca3af; transition: color 0.15s; }
+    footer a:hover { color: #fff; }
+
+    /* Step number circle */
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Step icon box */
+    .step-icon {
+      background-color: #EFF6FF;
+      width: 66px; height: 66px; 
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #6b7280;
+      flex-shrink: 0;
+    }
+
+    /* Timeline card */
+    .timeline-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(26,86,255,0.08);
+    }
+    .timeline-num {
+      font-size: 1.9rem; font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    /* Inform card */
+    .inform-card {
+      /* background: #fff; */
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .inform-card:hover { border-color: var(--blue); box-shadow: 0 6px 20px rgba(26,86,255,0.08); transform: translateY(-2px); }
+    .inform-icon {
+      width: 55px; height: 55px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+      
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      
+    }
+    .faq-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 0; cursor: pointer; background: none; border: none;
+      text-align: left; font-size: 0.9rem; font-weight: 500; color: #0A0A0A;
+      transition: color 0.15s;
+    }
+    .faq-btn:hover { color: var(--blue); }
+    .faq-icon { width: 20px; height: 20px; border: 1.5px solid #d1d5db; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #6b7280; }
+    .faq-body { display: none; padding-bottom: 1rem; font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+    .faq-item.open .faq-body { display: block; }
+    .faq-item.open .faq-icon { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .faq-item.open .faq-btn { color: var(--blue); }
+
+    /* Stats */
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(#155DFC);
+    }
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.6rem; border-radius: 7px;
+      border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; color: var(--blue);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.75rem; border-radius: 7px;
+      border: 2px solid #fff; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-white:hover { background: #eef2ff; transform: translateY(-1px); }
+ 
+
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- ── NAVBAR ── -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="#" class="text-lg font-bold" style="font-family:'Inter',serif; color:var(--blue)">BathPro Remodeling</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-900">
+      <a href="#">Home</a>
+      <a href="#">Bathroom Remodeling</a>
+      <a href="#">How It Works</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Track Order</a>
+    </nav>
+    <a href="#estimate" class="btn-blue text-sm hidden md:inline-block">Get Free Estimate</a>
+    <button class="md:hidden text-gray-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+ 
+  
+<div class="  flex items-start justify-center py-10 px-4">
+
+  <div class="w-full max-w-6xl bg-gray-100 lg:p-6 md:p-4 p-2">
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-2 font-arial">Request Your Free Estimate</h1>
+      <p class="text-gray-500 text-base font-archivo">Complete the form below to receive your detailed estimate within 24 hours</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="flex items-center justify-between mb-8 px-2">
+
+      <!-- Step 1 – Completed -->
+      <div class="flex flex-col items-center">
+        <div class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="text-xs text-gray-600 font-medium mt-1.5">Photos</span>
+      </div>
+      <div class="flex-1 h-px bg-green-400 mx-1 mb-4"></div>
+
+      <!-- Step 2 – Completed -->
+      <div class="flex flex-col items-center">
+        <div class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="text-xs text-gray-600 font-medium mt-1.5">Options</span>
+      </div>
+      <div class="flex-1 h-px bg-green-400 mx-1 mb-4"></div>
+
+      <!-- Step 3 – Completed -->
+      <div class="flex flex-col items-center">
+        <div class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="text-xs text-gray-600 font-medium mt-1.5">Contact</span>
+      </div>
+      <div class="flex-1 h-px bg-green-400 mx-1 mb-4"></div>
+
+      <!-- Step 4 – Completed -->
+      <div class="flex flex-col items-center">
+        <div class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center z-10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="text-xs text-gray-600 font-medium mt-1.5">Verify</span>
+      </div>
+      <div class="flex-1 h-px bg-green-400 mx-1 mb-4"></div>
+
+      <!-- Step 5 – Active -->
+      <div class="flex flex-col items-center">
+        <div class="w-9 h-9 rounded-full bg-blue-600 text-white text-sm font-bold flex items-center justify-center z-10">5</div>
+        <span class="text-xs text-gray-700 font-semibold mt-1.5">Review</span>
+      </div>
+
+    </div>
+
+    <!-- Card -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+
+      <!-- Card Body -->
+      <div class="px-8 py-8">
+        <h2 class="text-xl font-medium text-gray-900 mb-1">Review Your Request</h2>
+        <p class="text-sm text-gray-500 mb-7">Please review your information before submitting. We'll send your estimate within 24 hours.</p>
+
+        <!-- Project Type -->
+        <div class="mb-6">
+          <p class="text-sm font-bold text-gray-900 mb-1">Project Type</p>
+          <p class="text-sm text-gray-600">Bathroom Remodel</p>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-gray-100 mb-6" />
+
+        <!-- Photos -->
+        <div class="mb-6">
+          <p class="text-sm font-bold text-gray-900 mb-1">Photos</p>
+          <p class="text-sm text-gray-600">10 photos uploaded</p>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-gray-100 mb-6" />
+
+        <!-- Selected Options -->
+        <div class="mb-6">
+          <p class="text-sm font-bold text-gray-900 mb-2">Selected Options</p>
+          <ul class="space-y-1">
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              New Vanity
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              New Toilet
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              New Floor
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Tub To Shower
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Shower To Tub
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              New Tub Shower
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Install Tile
+            </li>
+            <li class="flex items-center gap-2 text-sm text-gray-600">
+              <svg class="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Wall Panels
+            </li>
+          </ul>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-gray-100 mb-6" />
+
+        <!-- Contact Information -->
+        <div class="mb-7">
+          <p class="text-sm font-bold text-gray-900 mb-2">Contact Information</p>
+          <div class="space-y-1 text-sm text-gray-600">
+            <p>Mehedy Hasan</p>
+            <p>01716354519</p>
+            <p>mehed@gmail.com</p>
+            <p>371/C Khilgaon</p>
+            <p>Dhaka,</p>
+            <p>1219</p>
+          </div>
+        </div>
+
+        <!-- What Happens Next -->
+        <div class="bg-blue-50 border border-blue-100 rounded-xl px-5 py-4">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="text-sm font-semibold text-blue-700">What happens next?</p>
+          </div>
+          <ul class="space-y-1 pl-7">
+            <li class="text-sm text-blue-600 list-disc">You'll receive a confirmation SMS immediately</li>
+            <li class="text-sm text-blue-600 list-disc">Our team will review your photos and selections</li>
+            <li class="text-sm text-blue-600 list-disc">You'll receive a detailed estimate via SMS within 24 hours</li>
+            <li class="text-sm text-blue-600 list-disc">You can track your project status anytime using your order ID</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card Footer -->
+      <div class="border-t border-gray-100 px-8 py-5 flex justify-between items-center bg-gray-50">
+        <button class="border border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold px-5 py-2.5 rounded-lg text-sm flex items-center gap-1.5 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back
+        </button>
+        <button class="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold lg:px-6 lg:py-2.5 py-2 px-4 rounded-lg text-sm flex items-center gap-2 transition-colors">
+          Submit Request
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div> 
+
+<!-- ── FOOTER ── -->
+
+<footer class="py-14 bg-[#0d1117]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Top grid: 3 columns matching screenshot -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Col 1: Brand + contact -->
+      <div class="max-w-xs">
+        <p class="text-base font-bold text-white mb-3" style="font-family:'Inter',serif;">BathPro Remodeling</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-5">Professional bathroom remodeling services with quality craftsmanship.</p>
+        <ul class="text-sm text-gray-400 space-y-2.5">
+
+          <li class="flex items-center gap-2.5">
+            <!-- Phone icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <g clip-path="url(#clip_phone)">
+                <path d="M9.22003 11.046C9.35772 11.1092 9.51283 11.1237 9.65983 11.0869C9.80682 11.0502 9.93692 10.9645 10.0287 10.844L10.2654 10.534C10.3896 10.3684 10.5506 10.234 10.7357 10.1414C10.9209 10.0488 11.125 10.0007 11.332 10.0007H13.332C13.6857 10.0007 14.0248 10.1411 14.2748 10.3912C14.5249 10.6412 14.6654 10.9804 14.6654 11.334V13.334C14.6654 13.6876 14.5249 14.0267 14.2748 14.2768C14.0248 14.5268 13.6857 14.6673 13.332 14.6673C10.1494 14.6673 7.09719 13.403 4.84675 11.1526C2.59631 8.90216 1.33203 5.84992 1.33203 2.66732C1.33203 2.3137 1.47251 1.97456 1.72256 1.72451C1.9726 1.47446 2.31174 1.33398 2.66536 1.33398H4.66536C5.01899 1.33398 5.35812 1.47446 5.60817 1.72451C5.85822 1.97456 5.9987 2.3137 5.9987 2.66732V4.66732C5.9987 4.87431 5.9505 5.07846 5.85793 5.2636C5.76536 5.44874 5.63096 5.60979 5.46536 5.73398L5.15336 5.96798C5.03098 6.06144 4.94471 6.19437 4.90923 6.34422C4.87374 6.49406 4.89122 6.65157 4.9587 6.78998C5.86982 8.64056 7.36831 10.1372 9.22003 11.046Z"
+                  stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip_phone"><rect width="16" height="16" fill="white"/></clipPath>
+              </defs>
+            </svg>
+            (555) 123-4567
+          </li>
+
+          <li class="flex items-center gap-2.5">
+            <!-- Mail icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M2.66667 2.66699H13.3333C14.0667 2.66699 14.6667 3.26699 14.6667 4.00033V12.0003C14.6667 12.7337 14.0667 13.3337 13.3333 13.3337H2.66667C1.93333 13.3337 1.33333 12.7337 1.33333 12.0003V4.00033C1.33333 3.26699 1.93333 2.66699 2.66667 2.66699Z"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.6667 4L8 8.66667L1.33333 4"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            info@bathproremodeling.com
+          </li>
+
+          <li class="flex items-center gap-2.5">
+            <!-- Location icon -->
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M8.00033 1.33301C5.79333 1.33301 4.00033 3.12601 4.00033 5.33301C4.00033 8.33301 8.00033 14.6663 8.00033 14.6663C8.00033 14.6663 12.0003 8.33301 12.0003 5.33301C12.0003 3.12601 10.2073 1.33301 8.00033 1.33301Z"
+                stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8.00033" cy="5.33301" r="1.33333"
+                stroke="#99A1AF" stroke-width="1.33333"/>
+            </svg>
+            Serving Your Area
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <p class="text-white font-semibold mb-4 text-md font-inter">Quick Links</p>
+        <ul class="space-y-2.5 text-md text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Get Started -->
+      <div>
+        <p class="text-white font-semibold mb-4 text-md font-inter">Get Started</p>
+        <ul class="space-y-2.5 text-md text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tub to Shower Conversion</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tile Installation</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vanity Replacement</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Plumbing Updates</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-gray-400 text-xs">© 2025 BathPro Remodeling. All Rights Reserved.</p>
+      <div class="flex gap-5 text-xs">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</div>
+ 
+</body>
+</html>
