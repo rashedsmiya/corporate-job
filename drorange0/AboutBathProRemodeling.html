@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BathPro Remodeling – Transform Your Bathroom in Days, Not Weeks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1a56ff;
+      --blue-dark: #0f3bcc;
+      --blue-light: #e8edff;
+    }
+
+    * { font-family: 'Inter', sans-serif; }
+    body { color: #0d1117; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1233bb 0%, #2445d4 40%, #3b63f5 100%);
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; left: -5%;
+      width: 55%; height: 160%;
+      background: radial-gradient(ellipse, rgba(120,150,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── PHOTO CARD ── */
+    .photo-card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 3/4;
+      flex-shrink: 0;
+    }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── BUTTONS ── */
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; color: var(--blue);
+      font-weight: 700; font-size: 0.85rem;
+      padding: 0.7rem 1.35rem; border-radius: 7px;
+      border: 2px solid #fff; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-white:hover { background: #eef2ff; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: transparent; color: #fff;
+      font-weight: 700; font-size: 0.85rem;
+      padding: 0.7rem 1.35rem; border-radius: 7px;
+      border: 2px solid rgba(255,255,255,0.75); cursor: pointer; transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+    .btn-blue {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.6rem; border-radius: 7px;
+      border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,86,255,0.35); }
+
+    /* ── CARDS ── */
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e8ecf4;
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: all 0.22s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .feature-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(26,86,255,0.1); transform: translateY(-3px); }
+
+    .icon-box {
+      width: 40px; height: 40px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.9rem;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .option-card {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      transition: all 0.22s;
+    }
+    .option-card:hover { box-shadow: 0 8px 24px rgba(26,86,255,0.08); transform: translateY(-2px); }
+
+    /* ── WHY CHOOSE SECTION ── */
+    .why-section { background: #155DFC; }
+    .why-icon {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    /* ── WHY REMODEL ITEMS ── */
+    .why-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.96rem; color: #374151; line-height: 1.5;
+    }
+
+    /* ── CHECK BADGE ── */
+    .check-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: #6b7280; font-size: 0.8rem;
+    }
+
+    /* ── NAV ── */
+    nav a { transition: color 0.15s; }
+    nav a:hover { color: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer { background: #0d1117; }
+    footer a { color: #9ca3af; transition: color 0.15s; }
+    footer a:hover { color: #fff; }
+
+     
+  
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .fade-up-1 { animation-delay: 0.1s; }
+    .fade-up-2 { animation-delay: 0.2s; }
+    .fade-up-3 { animation-delay: 0.3s; }
+    .fade-up-4 { animation-delay: 0.4s; }
+    .stat-card:hover { transform: translateY(-4px); transition: transform 0.3s ease; }
+    .feature-card:hover { box-shadow: 0 20px 40px rgba(30,64,175,0.12); transform: translateY(-3px); transition: all 0.3s ease; }
+
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- ════════════════════════════ NAVBAR ════════════════════════════ -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="#" class="text-lg font-bold" style="color:var(--blue)">BathPro Remodeling</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-900">
+      <a href="#">Home</a>
+      <a href="#">Bathroom Remodeling</a>
+      <a href="#">How It Works</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Track Order</a>
+    </nav>
+    <a href="#" class="btn-blue hidden md:inline-flex">Get Free Estimate</a>
+    <button class="md:hidden text-gray-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<section class="bg-white text-gray-800 antialiased">
+  <!-- Hero / Header -->
+  <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 text-white text-center py-16 px-6">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="lg:text-4xl text-2xl font-black mb-4 fade-up fade-up-1 font-semibold">About BathPro Remodeling</h1>
+      <p class="text-blue-100 leading-relaxed fade-up fade-up-2 font-inter text-base">
+        Transforming bathrooms across Ohio with quality craftsmanship, transparent pricing, and exceptional customer service since 2008.
+      </p>
+    </div>
+</div>
+</section>  
+
+  <!-- Our Story -->
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Our Story</h2>
+    <div class="space-y-5 text-gray-600 leading-relaxed text-[15px]">
+      <p>BathPro Remodeling was founded with a simple mission: make professional bathroom remodeling accessible, affordable, and stress-free for homeowners across Ohio. We saw too many families putting off necessary bathroom updates because the traditional remodeling process was too complicated, time-consuming, and unpredictable.</p>
+      <p>That's why we developed our streamlined online estimate system. By combining modern technology with traditional craftsmanship, we've created a better way to remodel bathrooms. You can now request an estimate from the comfort of your home, track your project online, and enjoy transparent communication throughout the entire process.</p>
+      <p>Over the past 15 years, we've completed more than 500 bathroom remodels, earning a reputation for quality work, fair pricing, and exceptional customer service. Our team of licensed professionals treats every bathroom as if it were their own, ensuring the highest standards of workmanship on every project.</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-blue-50 py-14 px-6 max-w-6xl mx-auto">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat-card rounded-2xl p-6 text-center  cursor-default">
+        <p class="lg:text-4xl md:text-2xl font-black text-blue-700 font-semibold">15+</p>
+        <p class="text-sm text-gray-500 mt-1 font-medium">Years in Business</p>
+      </div>
+      <div class="stat-card rounded-2xl p-6 text-center  cursor-default">
+        <p class="lg:text-4xl md:text-2xl font-black text-blue-700 font-semibold">500+</p>
+        <p class="text-sm text-gray-500 mt-1 font-medium">Bathrooms Completed</p>
+      </div>
+      <div class="stat-card rounded-2xl p-6 text-center  cursor-default">
+        <p class="lg:text-4xl md:text-2xl font-black text-blue-700 font-semibold">98%</p>
+        <p class="text-sm text-gray-500 mt-1 font-medium">Customer Satisfaction</p>
+      </div>
+      <div class="stat-card rounded-2xl p-6 text-center  cursor-default">
+        <p class="lg:text-4xl md:text-2xl font-black text-blue-700 font-semibold">4.9<span class="text-xl">/5</span></p>
+        <p class="text-sm text-gray-500 mt-1 font-medium">Average Rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-3">Why Choose Us</h2>
+    <p class="text-center text-gray-500 mb-12">We're committed to delivering exceptional results on every project</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="feature-card bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm cursor-default">
+        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        </div>
+        <h3 class="font-medium text-lg mb-3">Licensed &amp; Insured</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Fully licensed contractors with comprehensive insurance coverage for your complete protection and peace of mind.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="feature-card bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm cursor-default">
+        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+        </div>
+        <h3 class="font-medium text-lg mb-3">Quality Craftsmanship</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">We only use premium materials and employ skilled professionals who take great pride in every detail of their work.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="feature-card bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm cursor-default">
+        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+        </div>
+        <h3 class="font-medium text-lg mb-3">Customer-Focused</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Your satisfaction is our priority. We listen to your needs, communicate clearly, and deliver on our promises.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Licenses & Certifications -->
+  <section class="bg-gray-50 py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">Licenses &amp; Certifications</h2>
+      <p class="text-center text-gray-500 mb-10">Fully licensed, bonded, and insured for your protection</p>
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 grid sm:grid-cols-2 gap-5">
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm">Ohio State Contractor License</p>
+            <p class="text-xs text-gray-400">License #C345678</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm">General Liability Insurance</p>
+            <p class="text-xs text-gray-400">$2,000,000 aggregate</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm">Workers' Compensation</p>
+            <p class="text-xs text-gray-400">All employees insured</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm">Better Business Bureau</p>
+            <p class="text-xs text-gray-400">A+ Rating</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm">EPA Lead-Safe Certified</p>
+            <p class="text-xs text-gray-400">Firm #NAT-F123456</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-sm">10-Year Warranty</p>
+            <p class="text-xs text-gray-400">On all workmanship</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area -->
+  <section class="max-w-6xl mx-auto px-6 py-20 text-center">
+    <div class="mb-4 flex justify-center">
+      <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+      </div>
+    </div>
+    <h2 class="text-3xl font-bold mb-2">Service Area</h2>
+    <p class="text-gray-500 mb-10">Proudly serving homeowners throughout Ohio</p>
+    <div class="bg-blue-50 rounded-2xl p-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-gray-700 mb-6">
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Columbus, OH
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Cleveland, OH
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Cincinnati, OH
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Akron, OH
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Dayton, OH
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          Toledo, OH
+        </div>
+        <div class="col-span-2 flex items-center gap-2">
+          <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          And surrounding areas
+        </div>
+      </div>
+      <p class="text-xs text-gray-400">Don't see your city? Contact us to check if we service your area.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 text-white text-center py-16 px-6">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Ready to Work With Us?</h2>
+      <p class="text-blue-100 mb-8">Join hundreds of satisfied homeowners who have transformed their bathrooms with BathPro Remodeling.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#" class="bg-white text-blue-700 font-semibold px-7 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm shadow-lg">Get Free Estimate</a>
+        <a href="#" class="border-2 border-white text-white font-semibold px-7 py-3 rounded-xl hover:bg-white hover:text-blue-700 transition-colors text-sm">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer class="py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <div class="max-w-xs">
+        <p class="text-base font-bold text-white mb-3">BathPro Remodeling</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-5">Professional bathroom remodeling services with quality craftsmanship.</p>
+        <ul class="text-sm text-gray-400 space-y-2.5">
+          <li class="flex items-center gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <g clip-path="url(#clip_phone)">
+                <path d="M9.22003 11.046C9.35772 11.1092 9.51283 11.1237 9.65983 11.0869C9.80682 11.0502 9.93692 10.9645 10.0287 10.844L10.2654 10.534C10.3896 10.3684 10.5506 10.234 10.7357 10.1414C10.9209 10.0488 11.125 10.0007 11.332 10.0007H13.332C13.6857 10.0007 14.0248 10.1411 14.2748 10.3912C14.5249 10.6412 14.6654 10.9804 14.6654 11.334V13.334C14.6654 13.6876 14.5249 14.0267 14.2748 14.2768C14.0248 14.5268 13.6857 14.6673 13.332 14.6673C10.1494 14.6673 7.09719 13.403 4.84675 11.1526C2.59631 8.90216 1.33203 5.84992 1.33203 2.66732C1.33203 2.3137 1.47251 1.97456 1.72256 1.72451C1.9726 1.47446 2.31174 1.33398 2.66536 1.33398H4.66536C5.01899 1.33398 5.35812 1.47446 5.60817 1.72451C5.85822 1.97456 5.9987 2.3137 5.9987 2.66732V4.66732C5.9987 4.87431 5.9505 5.07846 5.85793 5.2636C5.76536 5.44874 5.63096 5.60979 5.46536 5.73398L5.15336 5.96798C5.03098 6.06144 4.94471 6.19437 4.90923 6.34422C4.87374 6.49406 4.89122 6.65157 4.9587 6.78998C5.86982 8.64056 7.36831 10.1372 9.22003 11.046Z" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs><clipPath id="clip_phone"><rect width="16" height="16" fill="white"/></clipPath></defs>
+            </svg>
+            (555) 123-4567
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M2.66667 2.66699H13.3333C14.0667 2.66699 14.6667 3.26699 14.6667 4.00033V12.0003C14.6667 12.7337 14.0667 13.3337 13.3333 13.3337H2.66667C1.93333 13.3337 1.33333 12.7337 1.33333 12.0003V4.00033C1.33333 3.26699 1.93333 2.66699 2.66667 2.66699Z" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.6667 4L8 8.66667L1.33333 4" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            info@bathproremodeling.com
+          </li>
+          <li class="flex items-center gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <path d="M8.00033 1.33301C5.79333 1.33301 4.00033 3.12601 4.00033 5.33301C4.00033 8.33301 8.00033 14.6663 8.00033 14.6663C8.00033 14.6663 12.0003 8.33301 12.0003 5.33301C12.0003 3.12601 10.2073 1.33301 8.00033 1.33301Z" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8.00033" cy="5.33301" r="1.33333" stroke="#99A1AF" stroke-width="1.33333"/>
+            </svg>
+            Serving Your Area
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-white font-semibold mb-4 text-sm">Quick Links</p>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-white font-semibold mb-4 text-sm">Get Started</p>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Bathroom Remodeling</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tub to Shower Conversion</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tile Installation</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Vanity Replacement</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Plumbing Updates</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-gray-400 text-xs">© 2025 BathPro Remodeling. All Rights Reserved.</p>
+      <div class="flex gap-5 text-xs">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
